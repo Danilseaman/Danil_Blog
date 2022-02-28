@@ -74,6 +74,7 @@ def post_update(id):
     else:
         return render_template('post_update.html', article=article)
 
+
 # Добавление статьи
 @app.route('/create-article', methods=['POST', 'GET'])
 def create_article():

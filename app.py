@@ -52,7 +52,7 @@ def post_delete(id):
     try:
         db.session.delete(article)
         db.session.commit()
-        return redirect('/posts')
+        return redirect(url_for('posts'))
     except:
         return "При удалении произошла ошибка!"
 
@@ -68,7 +68,7 @@ def post_update(id):
 
         try:
             db.session.commit()
-            return redirect('/posts')
+            return redirect(url_for('posts'))
         except:
             return "При редактировании статьи произошла ошибка!"
     else:
@@ -88,7 +88,7 @@ def create_article():
         try:
             db.session.add(article)
             db.session.commit()
-            return redirect('/posts')
+            return redirect(url_for('posts'))
         except:
             return "При добавлении статьи произошла ошибка!"
     else:
